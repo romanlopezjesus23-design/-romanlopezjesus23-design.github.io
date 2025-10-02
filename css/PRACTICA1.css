@@ -1,0 +1,105 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 70px;
+      background: #1e1e2f;
+      color: #fff;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    .sidebar.open {
+      width: 240px;
+    }
+
+    /* Logo y toggle */
+    .sidebar .logo {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: #27293d;
+    }
+
+    .sidebar .logo i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .sidebar .logo span {
+      margin-left: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar.open .logo span {
+      opacity: 1;
+    }
+
+    /* Menu */
+    .sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar ul li a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      text-decoration: none;
+      color: #bdbdbd;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li a i {
+      font-size: 18px;
+      width: 40px;
+      text-align: center;
+    }
+
+    .sidebar ul li a span {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar.open ul li a span {
+      opacity: 1;
+    }
+
+    .sidebar ul li a:hover {
+      background: #2d2d44;
+      color: #fff;
+    }
+
+    .sidebar ul li a.active {
+      background: #3f51b5;
+      color: #fff;
+    }
+
+    /* Contenido */
+    .main-content {
+      margin-left: 70px;
+      padding: 20px;
+      flex: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.open ~ .main-content {
+      margin-left: 240px;
+    }
