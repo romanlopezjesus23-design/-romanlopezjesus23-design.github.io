@@ -58,7 +58,7 @@ function sendMessage() {
     }
 
     // Define el avatar del usuario (U) que está enviando el mensaje
-    const userAvatar = '<img src="https://static.wikia.nocookie.net/doblaje/images/c/c0/KS_MOVIE_-_Miko_Iino.png/revision/latest?cb=20230403145818&path-prefix=es" alt="Usuario Avatar" class="avatar">';
+    const userAvatar = '<img src="img/miko.png" alt="Usuario Avatar" class="avatar">';
     
     // 1. Añade el mensaje del usuario
     appendMessage(text, 'sent', userAvatar);
