@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #8d9eb8; /* Color de fondo general */
+    display: flex; /* Para centrar la tarjeta */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 100vh; /* Ocupar toda la altura de la vista */
+    perspective: 1000px; /* Necesario para el efecto 3D */
+    padding: 20px; /* Espacio para dispositivos pequeños */
+}
+
+
+.card-container {
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 350px; /* Tamaño máximo para la tarjeta */
+    height: 450px; /* Altura de la tarjeta */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Animación de giro */
+    transform-style: preserve-3d; /* Mantener la perspectiva 3D */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    border-radius: 12px;
+}
+
+/* Estado de giro (Al pasar el ratón) */
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* ----------------------------- */
+/* Caras de la Tarjeta */
+/* ----------------------------- */
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box;
+    overflow: hidden; /* asegura que el contenido no se desborde */
+}
+
+/* Cara Frontal */
+.card-front, .card-back {
+    background-color: #80a0d1;
+}
+
+
+.card-front h2 {
+    margin: 10px 0;
+    font-size: 1.8em;
+}
+
+.card-front p {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+/* Cara Posterior */
+.card-back {
+    transform: rotateY(180deg); /* Voltear la cara posterior para que esté inicialmente oculta */
+}
+
+.card-back h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #e5ebee; /* Color de acento */
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    width: 100%;
+    max-width: 200px; /* Limita el ancho de la lista */
+}
+
+.card-back ul li {
+    margin-bottom: 12px;
+    font-size: 0.8em;
+}
+
+.card-back ul li i {
+    margin-right: 10px;
+    color: #bdbdbd; /* Color de texto neutral (menú inactivo) */
+}
+
+/* Botón de Giro */
+.btn-flip {
+    background-color: #3f51b5; /* Color de acento principal */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-flip:hover {
+    background-color: #5c6bc0; /* Un tono más claro al hacer hover */
+}
+
+/* ----------------------------- */
+/* Responsive Design (Media Queries) */
+/* ----------------------------- */
+
+@media (max-width: 450px) {
+    /* Ajusta el tamaño de la tarjeta para pantallas pequeñas */
+    .card-container {
+        max-width: 300px;
+        height: 400px;
+    }
+
+    .card-front h2 {
+        font-size: 1.5em;
+    }
+
+    .card-front p, .card-back h3, .card-back ul li {
+        font-size: 0.9em;
+    }
+}
+
+.card-image-front {
+    width: 210px;  /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}

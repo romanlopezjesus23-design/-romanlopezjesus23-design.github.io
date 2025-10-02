@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Chatbox / PRACTICA 2</title>
+    <link rel="stylesheet" href="css/PRACTICA2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <div class="chatbox-container">
+            <div class="chatbox-header">
+                <h3>Chatbox</h3>
+                <span class="status-dot online"></span>
+            </div>
+
+            <div class="chatbox-messages">
+                <div class="message-row received-row">
+                    <img src="img/soporte.png" alt="Agente Avatar" class="avatar">
+                    <div class="message received">
+                        <p>¡Hola! Soy tu agente. ¿En qué puedo ayudarte hoy?</p>
+                        <span class="timestamp">10:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="message-row sent-row">
+                    <div class="message sent">
+                        <p>Quiero actualizar mi información de envío.</p>
+                        <span class="timestamp">10:02 AM</span>
+                    </div>
+                    <img src="img/miko.png" alt="Usuario Avatar" class="avatar">
+                </div>
+
+                <div class="message-row received-row">
+                    <img src="img/soporte.png" alt="Agente Avatar" class="avatar">
+                    <div class="message received">
+                        <p>Entendido. Por favor, confírmame tu número de pedido o ID de usuario.</p>
+                        <span class="timestamp">10:05 AM</span>
+                    </div>
+                </div>
+            </div>
+
+        <div class="chatbox-input">
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." aria-label="Nuevo mensaje">    
+            <button type="submit" id="sendButton" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        </div>
+    </div>
+    
+    </body>
+</html>

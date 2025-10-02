@@ -1,0 +1,138 @@
+h1 {
+    /* Color de tu fondo oscuro principal */
+    color: #1e1e2f; 
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo para el párrafo debajo del título */
+body > p {
+    color: #3f51b5; /* Usamos tu color de resalte azul */
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 500px;
+    /* Aseguramos que el texto esté centrado junto al acordeón */
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* Modificación necesaria en el body para centrar todo */
+/* Asegúrate de que tu regla body original tenga las propiedades de centrado: */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #acbcda; 
+    display: flex;
+    flex-direction: column; /* Cambia a columna para apilar H1, P y el acordeón */
+    align-items: center; /* Centra todo horizontalmente */
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.acordeon {
+    width: 100%;
+    max-width: 500px; /* Ancho máximo para el acordeón */
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+}
+
+/* --- Ocultamos el checkbox real --- */
+.acordeon-check {
+    display: none;
+}
+
+/* --- Estilos del Título (El Label Clicable) --- */
+.acordeon-titulo {
+    display: block; 
+    padding: 15px 20px;
+    background-color: #1e1e2f; /* Fondo oscuro de tu sidebar */
+    color: #fff; /* Texto blanco */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: relative;
+    border-bottom: 1px solid #2d2d44; /* Borde sutil de separación */
+    transition: background-color 0.3s ease;
+}
+
+/* Añadir un ícono de flecha (o +) */
+.acordeon-titulo::after {
+    content: '▶'; /* Triángulo para indicar que está cerrado */
+    position: absolute;
+    right: 20px;
+    font-size: 0.8em;
+    line-height: 1;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover, similar al de los enlaces de tu sidebar */
+.acordeon-titulo:hover {
+    background-color: #2d2d44; 
+}
+
+
+/* --- Estilos del Contenido Ocultable --- */
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    color: #333;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.acordeon-contenido p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.acordeon-contenido ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.acordeon-contenido ul li a {
+    display: block;
+    padding: 8px 0;
+    color: #3f51b5; /* Usamos el color activo de tu sidebar */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.acordeon-contenido ul li a:hover {
+    color: #1e1e2f;
+}
+
+/* 1. Encabezado activo (usando el color activo/resalte) */
+.acordeon-check:checked + .acordeon-titulo {
+    background-color: #3f51b5; /* El color activo/primario de tu sidebar */
+    border-bottom-color: #3f51b5;
+}
+
+/* 2. Gira el ícono para indicar que está abierto */
+.acordeon-check:checked + .acordeon-titulo::after {
+    transform: rotate(90deg); /* Rota el triángulo para que apunte hacia abajo */
+}
+
+/* 3. Muestra el contenido */
+.acordeon-check:checked + .acordeon-titulo + .acordeon-contenido {
+    max-height: 600px; /* Alto suficiente para el contenido */
+    padding: 20px; /* Restaura el padding */
+}
+
+.jose-jose-img {
+    position: fixed;
+    bottom: 0px;
+    right: 20px; 
+    width: 170px;
+    height: auto;
+}
